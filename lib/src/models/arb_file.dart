@@ -86,7 +86,7 @@ class Message {
     final hasPlaceholders = placeholders != null && placeholders!.isNotEmpty;
     return {
       key: value,
-      if (hasPlaceholders && hasDescription)
+      if (hasPlaceholders || hasDescription)
         '@$key': {
           if (hasDescription) 'description': description,
           if (placeholders != null) 'placeholders': placeholders,
